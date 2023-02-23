@@ -1,6 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
   def index
-    items = Item.page(1)
+    items = Item.page params[:page]
     render json: {
       resources: items,
     }
